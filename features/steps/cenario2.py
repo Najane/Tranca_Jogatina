@@ -41,18 +41,25 @@ def step_impl(context):
     el6 = context.driver.find_element_by_xpath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.RelativeLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.ListView/android.widget.LinearLayout[7]/android.widget.LinearLayout/android.widget.CheckBox")
     time.sleep(5)
     el6.click()
+    time.sleep(10)
+    el8 = context.driver.find_element_by_accessibility_id("Navigate up")
     time.sleep(5)
+    el8.click() 
 
 
 @when('estiver desmarcado')
 def step_impl(context):
-    el8 = context.driver.find_element_by_accessibility_id("Navigate up")
-    el8.click() 
+    el5 = context.driver.find_element_by_id("com.jogatina.tranca:id/buttonOptions")
+    time.sleep(5)
+    el5.click()
+    time.sleep(5)
+     
     
 
 @then('foi feita a troca')
 def step_impl(context):
-    el5 = context.driver.find_element_by_id("com.jogatina.tranca:id/buttonOptions")
-    el5.click()
+    el8 = context.driver.find_element_by_accessibility_id("Navigate up")
+    el8.click()
+    time.sleep(5)
     context.driver.quit()
   

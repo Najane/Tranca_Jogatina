@@ -40,16 +40,13 @@ def create_todo(context):
     time.sleep(5)
 
 
-@then('verifico se "{texto}" está selecionado')
-def check_todo(context, texto):
-    el5 = context.driver.find_element_by_id("android:id/button2")
-    el5.click()  
+@then('verifico se "Normal" está selecionado')
+def check_todo(context):
+    el6 = context.driver.find_element_by_xpath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.RelativeLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.ListView/android.widget.LinearLayout[8]/android.widget.RelativeLayout")
+    el6.click() 
     time.sleep(5)
-
-    time.sleep(10)
     el5 = context.driver.find_element_by_id("android:id/button2")
     el5.click() 
     time.sleep(5)
 
     context.driver.quit()
-
